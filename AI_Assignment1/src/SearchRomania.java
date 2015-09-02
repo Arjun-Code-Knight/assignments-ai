@@ -57,7 +57,7 @@ public class SearchRomania {
 	 private void evaluatePaths()
 	 {
 		 long startTime = System.currentTimeMillis();
-		 System.out.println("Starting search Type - "+searchType+" | Source - "+startingPoint + " | EndingPoint -"+endingPoint );
+		 System.out.println("Starting search Type - "+searchType+" | Source - "+startingPoint + " | EndingPoint - "+endingPoint );
 		 startTime = System.currentTimeMillis();
 		 if(searchType.equals(breadFirstSearch))
 		 {
@@ -66,7 +66,7 @@ public class SearchRomania {
 		 {
 			 evaluateDepthFirstSearch();
 		 }
-		 System.out.println("Time Taken for the search in MilliSecs- "+(System.currentTimeMillis()-startTime));
+		 System.out.println("Time Taken for the search in MilliSecs - "+(System.currentTimeMillis()-startTime));
 	 }
 	 
 	 /**
@@ -166,7 +166,7 @@ public class SearchRomania {
 		 }
 		 System.out.print("]");
 		 System.out.print("\n");
-		 System.out.println("Number of Nodes in the Solution Path "+solutionPath.size() );
+		 System.out.println("Number of Nodes in the Solution Path - "+solutionPath.size() );
 	 }
 	 
 	 
