@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -15,7 +14,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author Arjun Thimmareddy
  * Unity Id : athimma
  * Student Id : 200105939
- *
+ * Email: athimma@ncsu.edu
  */
 
 
@@ -158,7 +157,16 @@ public class SearchRomania {
 	
 	 private void printSolutionPath(LinkedList<String> solutionPath)
 	 {
-		 System.out.println(solutionPath.toString());
+		 Iterator<String> iter = solutionPath.iterator();
+		 System.out.print("[");
+		 while(iter.hasNext())
+		 {
+			 System.out.print(iter.next());
+			 if(iter.hasNext())System.out.print("-->");
+		 }
+		 System.out.print("]");
+		 System.out.print("\n");
+		 System.out.println("Number of Nodes in the Solution Path "+solutionPath.size() );
 	 }
 	 
 	 
