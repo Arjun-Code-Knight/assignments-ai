@@ -158,6 +158,7 @@ public class SearchRomania {
 	 private void printSolutionPath(LinkedList<String> solutionPath)
 	 {
 		 Iterator<String> iter = solutionPath.iterator();
+		 if(iter.hasNext() ==false) System.out.print("No Path exists - city names should be in lowercase"); 
 		 System.out.print("[");
 		 while(iter.hasNext())
 		 {
