@@ -1,6 +1,6 @@
 Sample commands:
 
-1. javac SearchUSA.java
+1. "javac SearchUSA.java" to compile the code or "javac *.java"
 
 2. java SearchUSA uniform vancouver thunderBay
 
