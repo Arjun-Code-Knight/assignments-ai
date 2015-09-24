@@ -1,7 +1,5 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -206,10 +204,10 @@ public final class RouteHelper {
 		city.put("indianapolis","39.79,86.15");
 		city.put("jacksonville","30.32,81.66");
 		city.put("japan","35.68,220.23");
-		city.put("kansascity.put","39.08,94.56");
+		city.put("kansascity","39.08,94.56");
 		city.put("keyWest","24.56,81.78");
 		city.put("lafayette","30.21,92.03");
-		city.put("lakecity.put","30.19,82.64");
+		city.put("lakeCity","30.19,82.64");
 		city.put("laredo","27.52,99.49");
 		city.put("lasVegas","36.19,115.22");
 		city.put("lincoln","40.81,96.68");
@@ -232,7 +230,7 @@ public final class RouteHelper {
 		city.put("newYork","40.70,73.92");
 		city.put("norfolk","36.89,76.26");
 		city.put("oakland","37.80,122.23");
-		city.put("oklahomacity.put","35.48,97.53");
+		city.put("oklahomaCity","35.48,97.53");
 		city.put("omaha","41.26,96.01");
 		city.put("orlando","28.53,81.38");
 		city.put("ottawa","45.42,75.69");
@@ -252,7 +250,7 @@ public final class RouteHelper {
 		city.put("sacramento","38.56,121.47");
 		city.put("salem","44.93,123.03");
 		city.put("salinas","36.68,121.64");
-		city.put("saltLakecity.put","40.75,111.89");
+		city.put("saltLakeCity","40.75,111.89");
 		city.put("sanAntonio","29.45,98.51");
 		city.put("sanDiego","32.78,117.15");
 		city.put("sanFrancisco","37.76,122.44");
