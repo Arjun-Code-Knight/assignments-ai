@@ -11,7 +11,6 @@ import java.util.LinkedList;
 
 public class Path {
 		
-	private double cost;
 	double pathCost;
 	double heurisiticCost;
 	LinkedList<String> traversalPath = new LinkedList<String>();
