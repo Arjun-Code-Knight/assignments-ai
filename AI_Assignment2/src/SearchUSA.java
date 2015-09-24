@@ -146,7 +146,6 @@ public class SearchUSA {
 				newPath.traversalPath.addAll(tempPath.traversalPath);
 				if(newPath.traversalPath.contains(succNode)) continue; //if the node already exists on the path
 				newPath.traversalPath.add(succNode);
-				newPath.pathCost = tempPath.pathCost + RouteHelper.getInstance().getPathCost(currentNode, succNode);
 				newPath.heurisiticCost = RouteHelper.getInstance().getHeuristicEstimate(succNode, endingPoint);
 				queue.add(newPath);
 				deleteDuplicatePathsWithHighUniformCost(queue,newPath);
