@@ -204,7 +204,7 @@ public final class RouteHelper {
 		city.put("indianapolis","39.79,86.15");
 		city.put("jacksonville","30.32,81.66");
 		city.put("japan","35.68,220.23");
-		city.put("kansascity","39.08,94.56");
+		city.put("kansasCity","39.08,94.56");
 		city.put("keyWest","24.56,81.78");
 		city.put("lafayette","30.21,92.03");
 		city.put("lakeCity","30.19,82.64");
@@ -451,18 +451,13 @@ public final class RouteHelper {
 	 * Split string into components
 	 * 
 	 */
-	public Set<String> splitIntoComponents(String originalString)
-	{
-		int startidx = 0;
-		int tmpIdx = originalString.indexOf(COMMA);
+	public Set<String> splitIntoComponents(String originalString) {
 		Set<String> retList = new HashSet<String>();
-		while(tmpIdx != -1)
-		{
-			retList.add(originalString.substring(startidx,tmpIdx));
-			startidx = tmpIdx+1;
-			tmpIdx = originalString.indexOf(COMMA,startidx);
-			if(tmpIdx == -1 && startidx <= (originalString.length()-1))
-				retList.add(originalString.substring(startidx));
+		if (originalString != null) {
+			String[] elements = originalString.split(",");
+			for (String element : elements) {
+				retList.add(element);
+			}
 		}
 		return retList;
 	}
