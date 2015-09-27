@@ -82,7 +82,7 @@ public class SearchUSA {
 		initialPath.setPathCost(0);
 		initialPath.getTraversalPath().add(startingPoint);
 		queue.add(initialPath);
-		System.out.print("\nPaths picked for Exapnsion in below order\n");
+		System.out.print("\nNodes picked for Exapnsion in below order\n");
 		int nodesExpanded = 0;
 		while(!queue.isEmpty())
 		{
@@ -127,7 +127,7 @@ public class SearchUSA {
 		initialPath.setHeurisiticCost(RouteHelper.getInstance().getHeuristicEstimate(startingPoint, endingPoint));
 		initialPath.getTraversalPath().add(startingPoint);
 		queue.add(initialPath);
-		System.out.print("\nPaths picked for Exapnsion in below order\n");
+		System.out.print("\nNodes picked for Exapnsion in below order\n");
 		int nodesExpanded = 0;
 		while(!queue.isEmpty())
 		{
@@ -175,7 +175,7 @@ public class SearchUSA {
 		initialPath.setHeurisiticCost(RouteHelper.getInstance().getHeuristicEstimate(startingPoint, endingPoint));
 		initialPath.getTraversalPath().add(startingPoint);
 		queue.add(initialPath);
-		System.out.print("\nPaths picked for Exapnsion in below order\n");
+		System.out.print("\nNodes picked for Exapnsion in below order\n");
 		int nodesExpanded = 0;
 		while(!queue.isEmpty())
 		{
