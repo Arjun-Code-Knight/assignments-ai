@@ -87,7 +87,7 @@ public class SearchUSA {
 			String currentNode = tempPath.traversalPath.peekLast();
 			System.out.print("\n Path - [");
 			printExpandedPath(tempPath.traversalPath);
-			System.out.print("     Cost is "+tempPath.pathCost);
+			//System.out.print("     Cost is "+tempPath.pathCost);
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
@@ -130,7 +130,7 @@ public class SearchUSA {
 			String currentNode = tempPath.traversalPath.peekLast();
 			System.out.print("\nExpanded Path - [");
 			printExpandedPath(tempPath.traversalPath);
-			System.out.print("   Heuristic Cost is "+tempPath.heurisiticCost);
+			//System.out.print("   Heuristic Cost is "+tempPath.heurisiticCost);
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
@@ -174,7 +174,7 @@ public class SearchUSA {
 			String currentNode = tempPath.traversalPath.peekLast();
 			System.out.print("\n Path - [");
 			printExpandedPath(tempPath.traversalPath);
-			System.out.print(" PathCost="+tempPath.pathCost+" HeuristicEstimate="+tempPath.heurisiticCost+"  Cost is="+tempPath.getCost());
+			//System.out.print(" PathCost="+tempPath.pathCost+" HeuristicEstimate="+tempPath.heurisiticCost+"  Cost is="+tempPath.getCost());
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
