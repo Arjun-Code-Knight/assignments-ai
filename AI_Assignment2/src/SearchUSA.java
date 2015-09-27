@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
@@ -75,6 +77,7 @@ public class SearchUSA {
 	{
 		UniformCostComparator uniformComp = new UniformCostComparator();
 		PriorityQueue<Path> queue = new PriorityQueue<Path>(10,uniformComp);
+		List<String> expandedNodeList = new ArrayList<String>();
 		Path initialPath = new Path();
 		initialPath.setPathCost(0);
 		initialPath.getTraversalPath().add(startingPoint);
@@ -85,18 +88,19 @@ public class SearchUSA {
 		{
 			Path tempPath = queue.poll(); 
 			String currentNode = tempPath.traversalPath.peekLast();
-			System.out.print("\n Path - [");
-			printExpandedPath(tempPath.traversalPath);
-			//System.out.print("     Cost is "+tempPath.pathCost);
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
+				 printExpandedPath(expandedNodeList);
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
 				 printSolutionPath(tempPath.traversalPath);
 				 System.out.println("The total distance from " +startingPoint+ " to "+ endingPoint +" in the solution path "+tempPath.pathCost);
 				 return;//For the first Solution In Hand
 			 }
-			nodesExpanded++;
 			Set<String> succNodes = RouteHelper.getInstance().getPossibleSucessors(currentNode);
+			if(succNodes.size() > 0){
+				nodesExpanded++;
+				expandedNodeList.add(currentNode);
+			}
 			for(String succNode : succNodes)
 			{
 				Path newPath = new Path();
@@ -118,6 +122,7 @@ public class SearchUSA {
 		GreedyFirstCostComparator gredyFirstComparator = new GreedyFirstCostComparator();
 		PriorityQueue<Path> queue = new PriorityQueue<Path>(10,gredyFirstComparator);
 		Path initialPath = new Path();
+		List<String> expandedNodeList = new ArrayList<String>();
 		initialPath.setPathCost(0);
 		initialPath.setHeurisiticCost(RouteHelper.getInstance().getHeuristicEstimate(startingPoint, endingPoint));
 		initialPath.getTraversalPath().add(startingPoint);
@@ -128,18 +133,21 @@ public class SearchUSA {
 		{
 			Path tempPath = queue.poll(); 
 			String currentNode = tempPath.traversalPath.peekLast();
-			System.out.print("\nExpanded Path - [");
-			printExpandedPath(tempPath.traversalPath);
 			//System.out.print("   Heuristic Cost is "+tempPath.heurisiticCost);
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
+				 printExpandedPath(expandedNodeList);
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
 				 printSolutionPath(tempPath.traversalPath);
 				 System.out.println("The total distance from " +startingPoint+ " to "+ endingPoint +" in the solution path "+tempPath.pathCost);
 				 return;//For the first Solution In Hand
 			 }
-			 nodesExpanded++;
+			 
 			 Set<String> succNodes = RouteHelper.getInstance().getPossibleSucessors(currentNode);
+			 if(succNodes.size() > 0){
+				 nodesExpanded++;
+				 expandedNodeList.add(currentNode);
+			 }
 			for(String succNode : succNodes)
 			{
 				Path newPath = new Path();
@@ -161,6 +169,7 @@ public class SearchUSA {
 	{
 		AstarCostComparator atsarComp = new AstarCostComparator();
 		PriorityQueue<Path> queue = new PriorityQueue<Path>(10,atsarComp);
+		List<String> expandedNodeList = new ArrayList<String>();
 		Path initialPath = new Path();
 		initialPath.setPathCost(0);
 		initialPath.setHeurisiticCost(RouteHelper.getInstance().getHeuristicEstimate(startingPoint, endingPoint));
@@ -172,18 +181,19 @@ public class SearchUSA {
 		{
 			Path tempPath = queue.poll(); 
 			String currentNode = tempPath.traversalPath.peekLast();
-			System.out.print("\n Path - [");
-			printExpandedPath(tempPath.traversalPath);
-			//System.out.print(" PathCost="+tempPath.pathCost+" HeuristicEstimate="+tempPath.heurisiticCost+"  Cost is="+tempPath.getCost());
 			 if(currentNode != null && currentNode.equalsIgnoreCase(endingPoint))
 			 {
+				 printExpandedPath(expandedNodeList);
 				 System.out.print("\n\nThe number of nodes expanded = "+nodesExpanded+"\n");
 				 printSolutionPath(tempPath.traversalPath);
 				 System.out.println("The total distance from " +startingPoint+ " to "+ endingPoint +" in the solution path "+tempPath.getCost());
 				 return;//For the first Solution In Hand
 			 }
-			nodesExpanded++;
 			Set<String> succNodes = RouteHelper.getInstance().getPossibleSucessors(currentNode);
+			 if(succNodes.size() > 0){
+				 nodesExpanded++;
+				 expandedNodeList.add(currentNode);
+			 }
 			for(String succNode : succNodes)
 			{
 				Path newPath = new Path();
@@ -215,8 +225,9 @@ public class SearchUSA {
 		 System.out.println("Number of Nodes in the Solution Path - "+solutionPath.size() );
 	 }
 	 
-	 private void printExpandedPath(LinkedList<String> expandedPath)
+	 private void printExpandedPath(List<String> expandedPath)
 	 {
+		 System.out.print("\nNodes Expanded - [");
 		 Iterator<String> iter = expandedPath.iterator();
 		 while(iter.hasNext())
 		 {
